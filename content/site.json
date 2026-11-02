@@ -1,0 +1,578 @@
+{
+  "name": "Aaron Kaufman",
+  "tagline": "Aaron Kaufman.",
+  "intro": "Notes on Linux and server hardening.",
+  "about": "I’m Aaron Kaufman. I write about UNIX, FreeBSD, systems engineering, and information security.",
+  "description": "Aaron Kaufman's personal website. Systems engineering, information security, and Linux. Connect with Aaron on GitHub and LinkedIn.",
+  "profile_modified": "2026-11-02",
+  "url": "https://aaronkaufman.com",
+  "draft": false,
+  "email": "aaron@aaronkaufman.com",
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/aaronkaufman"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/aakaufman"
+    }
+  ],
+  "posts": [
+    {
+      "slug": "flock-alpr-cameras-los-angeles",
+      "title": "Flock Cameras in Los Angeles: Privacy Risks",
+      "description": "What Los Angeles’s license plate cameras collect, who can search the records, and what the LAPD audit found about privacy and oversight.",
+      "date": "2026-11-02",
+      "category": "Privacy / Surveillance",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "A license plate camera records more than a number. It records where a vehicle was and when it passed. Across Los Angeles, police have added that capability to roadside cameras and equipment already inside patrol cars. I find the scale alarming because the records can outlast the trip, while rules about who can search them have lagged behind deployment."
+        },
+        {
+          "type": "p",
+          "text": "Flock Safety sells some of these systems. Automated license plate readers, or ALPRs, also come from other vendors. Switching brands does not necessarily stop collection. To understand what a local program does, look at the cameras, the databases they feed, and the people allowed to search those records."
+        },
+        {
+          "type": "h2",
+          "text": "Flock cameras and LAPD’s wider ALPR system"
+        },
+        {
+          "type": "p",
+          "text": "The LAPD inspector general’s July 2026 review describes how quickly capacity can grow without new poles on the street. In 2023, the department activated plate recognition in about 1,500 police vehicles. It later received a loan of 50 Flock cameras for the Pacific Palisades area after the January 2025 fire.",
+          "source": {
+            "url": "https://www.oig.lacity.org/_files/ugd/b2dd23_781bdb1b27314ec4acc45f4b821320d8.pdf",
+            "label": "LAPD review, pages 4–5 (PDF)."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The review counted more than 210 million plate reads in August and September 2025. A vehicle can appear many times, so that figure does not count unique cars or people. The report also found gaps in agreements covering data security and access. Collection was already running at scale while those terms remained unresolved.",
+          "source": {
+            "url": "https://www.oig.lacity.org/_files/ugd/b2dd23_781bdb1b27314ec4acc45f4b821320d8.pdf",
+            "label": "Audit findings, page 2 (PDF)."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Nearby cities operate separate programs. La Cañada Flintridge’s fixed Flock cameras are run by the Los Angeles County Sheriff’s Department. The city says its data is shared only with authorized California law enforcement agencies. Its policy does not describe every system in the county, and LAPD’s decisions do not switch those cameras off.",
+          "source": {
+            "url": "https://lcf.ca.gov/public-safety/flock-alpr-public-safety-cameras/",
+            "label": "La Cañada Flintridge’s camera policy."
+          }
+        },
+        {
+          "type": "p",
+          "text": "By October, Council District 13 reported that no Flock cameras were transmitting to LAPD and that sharing with outside agencies had stopped. It also reported that more than 4,000 officers could search ALPR records, without regular reviews of who still needed access. That leaves a large group of users whose permissions need scrutiny.",
+          "source": {
+            "url": "https://cd13.lacity.gov/news/who-can-access-your-data",
+            "label": "Council District 13’s October update."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The records reviewed here do not establish a monthly growth rate for every ALPR across Los Angeles County. A purchased camera may be inactive. A patrol car may gain plate recognition through a software change. These differences matter when comparing counts or claiming that surveillance has stopped."
+        },
+        {
+          "type": "image",
+          "src": "/assets/alpr-data-trail.webp",
+          "small_src": "/assets/alpr-data-trail-small.webp",
+          "width": 1440,
+          "height": 810,
+          "alt": "A car’s license plate sightings become records in a filing cabinet with connections to other archives.",
+          "text": "A sighting becomes a searchable record. Conceptual AI-generated illustration for aaronkaufman.com."
+        },
+        {
+          "type": "h2",
+          "text": "Why stored plate sightings create privacy risks"
+        },
+        {
+          "type": "p",
+          "text": "A series of sightings can suggest visits to a clinic, a place of worship, a workplace, or a protest. That is a risk even without facial recognition. The data can reveal sensitive associations, but it cannot establish who was driving or why the car was there. Investigators need to keep those limits in view."
+        },
+        {
+          "type": "p",
+          "text": "The audit shows both useful results and reasons for caution. It linked 337 alerts to stolen vehicle recoveries. It also identified 161 alerts where officers confirmed the plate match but later found the vehicle was not stolen. Those findings describe alert outcomes, not a measured error rate for every camera or search. A fair assessment should also separate live alerts from later database searches. They serve different purposes and need different measures of success.",
+          "source": {
+            "url": "https://www.oig.lacity.org/_files/ugd/b2dd23_781bdb1b27314ec4acc45f4b821320d8.pdf",
+            "label": "Alert outcomes, pages 2 and 16 (PDF)."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Flock announced changes in August, including a shorter standard retention period and mandatory audit measures. The Associated Press reported that some requirements were due by January 1, 2027. Officials should verify which settings are active locally, who can override them, and what happens to data saved under an exception.",
+          "source": {
+            "url": "https://apnews.com/article/2a93bc075e2f7ffcca9e04a35d75a3fe",
+            "label": "Associated Press report on the announced safeguards."
+          }
+        },
+        {
+          "type": "h2",
+          "text": "What Los Angeles residents should ask for"
+        },
+        {
+          "type": "p",
+          "text": "I would start with a public inventory of active cameras, software features, and outside data sources. Each program should name its operator and publish its cost, contract, privacy policy, and renewal date. A list of hardware alone will miss access to records collected somewhere else."
+        },
+        {
+          "type": "p",
+          "text": "Access should follow a person’s current job. Remove accounts when staff leave or change roles. Require a case number and a stated reason for each search, with any emergency override recorded for review. Keep logs that show who searched, what they requested, and whether they exported the results."
+        },
+        {
+          "type": "p",
+          "text": "Logs need someone to read them. An independent reviewer should check a sample of searches against the cases cited, investigate unusual patterns, and publish findings. A system that records every query can still permit abuse if nobody examines the record or acts on it."
+        },
+        {
+          "type": "p",
+          "text": "Set short deletion periods and spell out when evidence may be kept longer. Check whether deletion reaches exports and copies held by other agencies. Residents can ask their council offices for those rules and the latest audit. A claim that data is deleted needs evidence from the systems that hold it."
+        },
+        {
+          "type": "p",
+          "text": "Expansion should require another public decision, including when equipment is donated or a software update adds new tracking features. Temporary deployments need expiration dates. Publish the results, costs, and misuse findings before renewal. Los Angeles should decide how much vehicle history police may collect and search before granting the next extension."
+        }
+      ],
+      "hero": {
+        "src": "/assets/flock-los-angeles-hero.webp",
+        "small_src": "/assets/flock-los-angeles-hero-small.webp",
+        "social_src": "/assets/flock-los-angeles-hero.jpg",
+        "width": 1440,
+        "height": 810,
+        "alt": "Editorial illustration of license plate cameras watching cars on a palm-lined Los Angeles street.",
+        "text": "Original AI-generated illustration for aaronkaufman.com. Conceptual scene, not a map of installed cameras."
+      },
+      "modified": "2026-11-02"
+    },
+    {
+      "slug": "ed25519-quantum-resistance-ai",
+      "title": "Ed25519, Quantum Resistance, and AI",
+      "description": "Ed25519 is not quantum-resistant. Understand what AI changes, how post-quantum signatures differ, and how to plan a migration.",
+      "date": "2026-10-04",
+      "category": "Cryptography",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Ed25519 is useful, widely deployed, and not quantum-resistant. AI does not change that answer. What it changes is the environment around the signature: more generated code, more automated decisions, and new opportunities to mishandle the keys that make authentication work. Planning for quantum attacks means replacing vulnerable cryptography while keeping those everyday failures in view."
+        },
+        {
+          "type": "h2",
+          "text": "What Ed25519 signatures guarantee"
+        },
+        {
+          "type": "p",
+          "text": "Ed25519 is a digital signature scheme. A private key signs a message, and the corresponding public key lets someone verify it. Its public keys are 32 bytes and its signatures are 64 bytes. RFC 8032 describes an intended classical security level of about 128 bits. Those properties make it useful where small keys and signatures matter.",
+          "source": {
+            "url": "https://www.rfc-editor.org/rfc/rfc8032.html",
+            "label": "RFC 8032."
+          }
+        },
+        {
+          "type": "p",
+          "text": "A valid signature establishes a relationship between specific data and a signing key. Trust in a person or organization also depends on how that public key was obtained. If an attacker replaces both a download and the public key offered beside it, checking the signature against that replacement key provides no useful assurance about the original publisher."
+        },
+        {
+          "type": "p",
+          "text": "Signing also does not encrypt the message. Nor does it prove that signed code is safe, a model is accurate, or a document is truthful. A publisher can sign a bad release. An attacker who steals its signing key can produce signatures that verify correctly."
+        },
+        {
+          "type": "h2",
+          "text": "Why quantum computers change the calculation"
+        },
+        {
+          "type": "p",
+          "text": "Ed25519 relies on an elliptic curve discrete logarithm problem. A sufficiently capable quantum computer running Shor’s algorithm could solve that problem and derive the signing secret from a public key, allowing forged signatures. Switching to a larger conventional elliptic curve does not remove that class of attack. RFC 8032 explicitly identifies both Ed25519 and Ed448 as vulnerable to quantum computing.",
+          "source": {
+            "url": "https://www.rfc-editor.org/rfc/rfc8032.html#section-8.5",
+            "label": "RFC 8032 security considerations."
+          }
+        },
+        {
+          "type": "p",
+          "text": "That requires a cryptographically relevant quantum computer, not simply a machine advertised as quantum. AI assistance does not supply the quantum hardware this attack requires. The engineering problem is to prepare systems that may remain in service for years without treating an uncertain arrival date as an excuse to postpone every migration decision.",
+          "source": {
+            "url": "https://www.rfc-editor.org/rfc/rfc9958.html#section-3.2",
+            "label": "IETF guidance on quantum attacks."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Signatures also face a different timing problem from encrypted traffic collected for later decryption. With signatures, the concern is future forgery and whether verifiers can distinguish legitimate historical records from newly forged ones. Software updates, archived documents, and trust anchors can need protection long after their original signing date.",
+          "source": {
+            "url": "https://www.rfc-editor.org/rfc/rfc9958.html#section-7",
+            "label": "IETF guidance on migration timelines."
+          }
+        },
+        {
+          "type": "h2",
+          "text": "Where AI creates immediate risk"
+        },
+        {
+          "type": "p",
+          "text": "The UK’s National Cyber Security Centre assesses that AI will make parts of cyber intrusion more efficient and effective. For an operator, that is a reason to examine exposed services, credentials, and release systems. An attacker may gain more from compromising a build job or tricking a maintainer than from attacking the signature algorithm itself.",
+          "source": {
+            "url": "https://www.ncsc.gov.uk/report/impact-ai-cyber-threat-now-2027",
+            "label": "NCSC assessment through 2027."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Consider an AI agent preparing a software release. If it can modify source code, approve the build, and invoke the signing service, the signature may authenticate a release nobody independently checked. That is an authorization failure. Changing Ed25519 to a quantum-resistant algorithm would still leave the agent with the same excessive authority."
+        },
+        {
+          "type": "p",
+          "text": "Separate generation from approval. Give signing services narrow permissions, log their use, and require review before sensitive releases. When signing model artifacts, define which weights, configuration, tokenizer, and dependencies the signature covers. Verifying one file does not establish the integrity of every component loaded alongside it."
+        },
+        {
+          "type": "image",
+          "src": "/assets/ai-release-approval.webp",
+          "small_src": "/assets/ai-release-approval-small.webp",
+          "width": 1440,
+          "height": 810,
+          "alt": "An automated arm prepares a document, a human opens an approval gate, and a separate machine signs the release.",
+          "text": "Keep generation, approval, and signing separate. Conceptual AI-generated illustration for aaronkaufman.com."
+        },
+        {
+          "type": "h2",
+          "text": "Moving to quantum-resistant signatures"
+        },
+        {
+          "type": "p",
+          "text": "NIST standardized ML-DSA in FIPS 204 and SLH-DSA in FIPS 205 in 2024. They use different foundations: structured lattices for ML-DSA and hash functions for SLH-DSA. Both are intended to resist known quantum attacks. They still require sound implementations, protected keys, and ongoing cryptanalysis. Quantum-resistant describes a security goal, not a promise that software cannot fail.",
+          "source": {
+            "url": "https://csrc.nist.gov/projects/post-quantum-cryptography",
+            "label": "NIST post-quantum standards."
+          }
+        },
+        {
+          "type": "p",
+          "text": "ML-KEM serves a different purpose. It establishes a shared secret for uses such as encryption. It does not replace an Ed25519 signature.",
+          "source": {
+            "url": "https://csrc.nist.gov/pubs/fips/203/final",
+            "label": "FIPS 203."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The same distinction matters in SSH. OpenSSH supports post-quantum key agreement, but that does not automatically make an Ed25519 authentication key quantum-resistant. Check the negotiated key agreement and the signature algorithms separately. A product’s quantum security claim may cover one part of the connection.",
+          "source": {
+            "url": "https://www.openssh.org/pq.html",
+            "label": "OpenSSH post-quantum guidance."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Start by inventorying where signatures are created and verified. Include release tooling, firmware, package repositories, and devices that cannot easily be updated. Test supported migration paths with real clients. Measure larger signatures, storage limits, verification costs, and failure handling before changing production trust rules.",
+          "source": {
+            "url": "https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc",
+            "label": "NIST migration project."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Plan how new public keys reach verifiers before changing the signer. Test missing signatures, altered artifacts, expired credentials, and attempts to select an older algorithm. Make rollback rules explicit so a failed upgrade cannot quietly restore a retired trust path. Keep an owner responsible for each stage of the transition."
+        },
+        {
+          "type": "p",
+          "text": "If a protocol combines classical and post-quantum signatures, understand its acceptance rules. Requiring both signatures can preserve protection when one scheme fails. Accepting either can preserve the weaker path. Use reviewed protocol designs rather than inventing a combination that merely attaches two signatures.",
+          "source": {
+            "url": "https://www.rfc-editor.org/rfc/rfc9958.html#section-13.2",
+            "label": "IETF hybrid authentication guidance."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Ed25519 deserves a migration plan based on its limits. AI makes disciplined access control and release review more urgent. Quantum computing makes the choice of signature algorithm a long term concern. Treat both as engineering work with named owners, tested changes, and a way to verify progress."
+        }
+      ],
+      "modified": "2026-11-02",
+      "hero": {
+        "src": "/assets/ed25519-quantum-hero.webp",
+        "small_src": "/assets/ed25519-quantum-hero-small.webp",
+        "social_src": "/assets/ed25519-quantum-hero.jpg",
+        "width": 1440,
+        "height": 810,
+        "alt": "A signing machine marks a document, with a stylized quantum computer in the distance.",
+        "text": "Digital signatures and quantum computing. Conceptual AI-generated illustration for aaronkaufman.com."
+      }
+    },
+    {
+      "slug": "state-of-email-2026",
+      "title": "The State of Email in 2026: Privacy and PGP",
+      "description": "I left Gmail in 2019 and eventually settled on StartMail. I want reliable email, PGP, and the freedom to choose my own client.",
+      "date": "2026-09-17",
+      "modified": "2026-11-02",
+      "category": "Email and privacy",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "I finished removing Google from my life in 2019. Gmail was the last holdout. Email is a miserable thing to move because your address becomes attached to everything, including accounts you forgot existed until they send a password reset."
+        },
+        {
+          "type": "p",
+          "text": "I bounced between providers before settling on StartMail. My requirements were straightforward: IMAP, SMTP, and PGP. I self-host my calendar over CalDAV. I want to choose the programs that handle those jobs without asking a mail company which operating systems I am allowed to like."
+        },
+        {
+          "type": "p",
+          "text": "For private email in 2026, I want a mailbox I can use with my own software. Here is how Gmail, Proton Mail, Tuta, Fastmail, and StartMail measure up against that requirement."
+        },
+        {
+          "type": "h2",
+          "text": "Gmail in 2026: advertising, AI, and email privacy"
+        },
+        {
+          "type": "p",
+          "text": "“You are the product” describes my problem with advertising-funded email. Companies profit from access to your attention, with personal information helping target the pitch. Google says Gmail ads are not based on scanning your messages and that it does not sell your personal information. Selling advertisers access to an audience is still monetization. I would rather pay for a mailbox than participate in that arrangement.",
+          "source": {
+            "label": "Google's Gmail advertising policy",
+            "url": "https://support.google.com/mail/answer/6603?hl=en-ca"
+          }
+        },
+        {
+          "type": "p",
+          "text": "This year's Gemini Personal Intelligence pitch connects Gmail with other Google services to personalize assistance. Those connections are opt-in and off by default. Google says it does not train directly on your inbox. I still do not want AI reading my email to personalize an answer. My receipts do not need a relationship with a chatbot.",
+          "source": {
+            "label": "Google's Personal Intelligence announcement",
+            "url": "https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence/"
+          }
+        },
+        {
+          "type": "p",
+          "text": "Gmail still supports third-party clients through IMAP. My objection is the dependency surrounding the mailbox. I left Google because I wanted less of Google in my life. Seven years later, connecting more Google products is a lousy invitation back.",
+          "source": {
+            "label": "Gmail's external-client documentation",
+            "url": "https://support.google.com/mail/answer/7126229?hl=en"
+          }
+        },
+        {
+          "type": "h2",
+          "text": "Outlook and iCloud Mail: who can access your email?"
+        },
+        {
+          "type": "p",
+          "text": "Switching providers while overlooking the client can undermine the whole exercise. Microsoft's Outlook cloud-sync feature copies mail from connected accounts into Microsoft data centers. Supported accounts and platforms vary. That is another company handling the mailbox, even when the address belongs to an independent provider. Read what the client does before giving it credentials.",
+          "source": {
+            "label": "Microsoft's cloud-sync documentation",
+            "url": "https://support.microsoft.com/en-us/outlook/getstarted/sync-your-account-in-outlook-to-the-microsoft-cloud"
+          }
+        },
+        {
+          "type": "p",
+          "text": "Apple's privacy reputation does not make iCloud Mail end-to-end encrypted. Mail remains outside that protection even with Advanced Data Protection enabled. Apple documents this. Read the per-service details instead of assuming a company's strongest privacy feature covers every product wearing its logo.",
+          "source": {
+            "label": "Apple's iCloud data security overview",
+            "url": "https://support.apple.com/en-us/102651"
+          }
+        },
+        {
+          "type": "h2",
+          "text": "KISS: keep it simple, stupid"
+        },
+        {
+          "type": "p",
+          "text": "IMAP gives clients access to a mailbox. SMTP handles sending. Neither is glamorous, and neither needs a launch event. Their value is that the interface survives a change of software. I can dislike a mail client, replace it, and keep receiving mail at the same address."
+        },
+        {
+          "type": "p",
+          "text": "No bells and whistles. Receive mail, send mail, and let me choose the client. I want fewer dependencies and less software between me and a message. KISS still leaves room for strong authentication, encryption, and updates. It does not require an AI assistant, a bundled workspace, or another dashboard to babysit."
+        },
+        {
+          "type": "p",
+          "text": "Open protocols alone do not prevent lock-in. Your address, stored messages, contacts, and recovery arrangements can still make leaving painful. A domain you control helps preserve the address. Exportable mail and tested backups help preserve the history. An exit should be something you can execute, not a reassuring sentence on a pricing page."
+        },
+        {
+          "type": "h2",
+          "text": "Private email in 2026: Proton, Tuta, and Fastmail"
+        },
+        {
+          "type": "h3",
+          "text": "Proton Mail: Bridge and reliability concerns"
+        },
+        {
+          "type": "p",
+          "text": "Proton Mail supports OpenPGP exchanges with people outside Proton. That interoperability matters. I do not want everyone I email to need an account with my provider.",
+          "source": {
+            "label": "Proton's PGP documentation",
+            "url": "https://proton.me/support/how-to-use-pgp"
+          }
+        },
+        {
+          "type": "p",
+          "text": "Its Bridge application supplies local IMAP/SMTP access for desktop clients. It requires a paid plan and supports Windows, macOS, and Linux, not mobile. That is another process to maintain. I prefer direct server access.",
+          "source": {
+            "label": "Proton's Bridge requirements",
+            "url": "https://proton.me/support/imap-smtp-and-pop3-setup"
+          }
+        },
+        {
+          "type": "p",
+          "text": "Reliability concerns me more. Proton's August 27, 2026 outage followed a datacenter cooling failure. Its own report describes lost redundancy, database failover complications, and resilience improvements still underway. Those are major operational problems for a service people depend on for mail.",
+          "source": {
+            "label": "Proton's August outage report",
+            "url": "https://proton.me/blog/august-27-outage-incident-report"
+          }
+        },
+        {
+          "type": "p",
+          "text": "Further disruption followed on September 1 during recovery-related maintenance. Proton reported instability under load and reduced capacity, then said service was restored without lost data. That is enough to make reliability a deciding factor for me.",
+          "source": {
+            "label": "Proton's incident history",
+            "url": "https://status.proton.me/history"
+          }
+        },
+        {
+          "type": "p",
+          "text": "Meanwhile, Proton's product announcements include video meetings and an AI assistant. From the outside, it feels like too many pots on the stove. I cannot see how its teams divide their time. For email, I care more about a quiet incident log than another launch.",
+          "source": {
+            "label": "Proton's product updates",
+            "url": "https://proton.me/blog/proton-updates"
+          }
+        },
+        {
+          "type": "h3",
+          "text": "Tuta: no IMAP or OpenPGP support"
+        },
+        {
+          "type": "p",
+          "text": "Tuta uses its own encryption system and clients, with no IMAP or PGP support. It encrypts subjects too, but fails my interoperability requirements.",
+          "source": {
+            "label": "Tuta's security architecture",
+            "url": "https://tuta.com/security"
+          }
+        },
+        {
+          "type": "p",
+          "text": "My default rule is “never roll your own crypto.” TutaCrypt is a custom protocol built from established components, including X25519 and Kyber. That is different from inventing a cipher. A new protocol still needs expert scrutiny of how those components fit together. I prefer OpenPGP compatibility and encryption I can use across providers.",
+          "source": {
+            "label": "TutaCrypt's published specification",
+            "url": "https://tuta.com/documents/tuta-crypt-spec.pdf"
+          }
+        },
+        {
+          "type": "h3",
+          "text": "Fastmail: IMAP, SMTP, and PGP in your client"
+        },
+        {
+          "type": "p",
+          "text": "Fastmail is closer to the conventional model I want. It supports IMAP, SMTP, CalDAV, and CardDAV on eligible plans. Its Basic plan excludes those interfaces, so check the plan before paying. A standards-based service still needs the right subscription attached to it.",
+          "source": {
+            "label": "Fastmail's client and plan documentation",
+            "url": "https://www.fastmail.help/hc/en-us/articles/360058752834-Set-up-Fastmail-on-your-device"
+          }
+        },
+        {
+          "type": "p",
+          "text": "Fastmail does not provide an end-to-end encrypted mailbox by default. Its servers process message content for features such as search. You can use PGP in a compatible client, with the associated key management left to you. That is an intelligible tradeoff, provided you understand what the provider can read.",
+          "source": {
+            "label": "Fastmail's security documentation",
+            "url": "https://www.fastmail.help/hc/en-us/articles/1500000280221-How-Fastmail-provides-a-secure-service"
+          }
+        },
+        {
+          "type": "h2",
+          "text": "Encrypted email: TLS vs. end-to-end encryption"
+        },
+        {
+          "type": "p",
+          "text": "“Encrypted email” needs a follow-up question. TLS protects the connection to the server. Encryption at rest protects stored data under a particular key-management arrangement. Neither, by itself, means only the sender and recipient can read the message. I want to know where plaintext exists and who can obtain the keys. A padlock icon has never been an adequate architecture diagram.",
+          "source": {
+            "label": "Fastmail's explanation of transport and message encryption",
+            "url": "https://www.fastmail.help/hc/en-us/articles/1500000280221-How-Fastmail-provides-a-secure-service"
+          }
+        },
+        {
+          "type": "h2",
+          "text": "Why I chose StartMail for private email"
+        },
+        {
+          "type": "p",
+          "text": "StartMail gives me direct IMAP and SMTP access with separate device credentials. That fits how I want email to work. I can choose a client around my operating system and habits instead of arranging my habits around the provider's application.",
+          "source": {
+            "label": "StartMail's server settings",
+            "url": "https://support.startmail.com/hc/en-us/articles/360006596718-Server-addresses"
+          }
+        },
+        {
+          "type": "p",
+          "text": "StartMail also has mobile apps now. Fine. An optional app can be useful. My objection starts when the app becomes the admission ticket and my existing client becomes somebody else's deprecated use case.",
+          "source": {
+            "label": "StartMail's app and webmail features",
+            "url": "https://support.startmail.com/hc/en-us/articles/39169781980957-StartMail-App-vs-Webmail-features"
+          }
+        },
+        {
+          "type": "p",
+          "text": "The PGP distinction needs spelling out. StartMail's built-in webmail cryptography runs on its servers. Handling OpenPGP yourself in a local client is a different arrangement, with different trust assumptions. A PGP feature does not automatically mean the provider never handles decrypted content or key material. Decide where encryption happens before deciding what it protects.",
+          "source": {
+            "label": "StartMail's security whitepaper",
+            "url": "https://www.startmail.com/whitepaper/"
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/email-2026-pgp.webp",
+          "small_src": "/assets/email-2026-pgp-720.webp",
+          "width": 1440,
+          "height": 810,
+          "alt": "An envelope with protected contents, an exposed address label, and a separate key.",
+          "text": "Conceptual illustration: protecting message contents does not conceal every part of delivery."
+        },
+        {
+          "type": "p",
+          "text": "PGP is a requirement for me, not a claim that every message I send is encrypted. The recipient needs a compatible setup. Keys need verification and backups. Routing information remains visible, and a compromised endpoint can expose a message after decryption. None of that makes PGP pointless. It makes knowing its limits part of using it.",
+          "source": {
+            "label": "Thunderbird's end-to-end encryption overview",
+            "url": "https://support.mozilla.org/en-US/kb/introduction-to-e2e-encryption"
+          }
+        },
+        {
+          "type": "p",
+          "text": "Quantum resistance raises a separate set of questions. I cover the limits of today's digital signatures and the move to post-quantum alternatives in",
+          "source": {
+            "label": "Ed25519, Quantum Resistance, and AI",
+            "url": "https://aaronkaufman.com/blog/ed25519-quantum-resistance-ai/"
+          }
+        },
+        {
+          "type": "h2",
+          "text": "StartMail calendars and self-hosted CalDAV"
+        },
+        {
+          "type": "p",
+          "text": "StartMail says it does not currently offer a calendar. My CalDAV server is separate and self-hosted, not a StartMail feature. That suits me. Changing email providers should not require moving every appointment along with the mailbox.",
+          "source": {
+            "label": "StartMail's calendar statement",
+            "url": "https://www.startmail.com/tuta-alternative/"
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/email-2026-modular.webp",
+          "small_src": "/assets/email-2026-modular-720.webp",
+          "width": 1440,
+          "height": 810,
+          "alt": "Separate mail, calendar, and contact tools connected to a computer through detachable cables.",
+          "text": "Conceptual illustration: independent services connected through replaceable interfaces."
+        },
+        {
+          "type": "p",
+          "text": "Self-hosting comes with maintenance, backups, updates, and recovery. I accept that work for my calendar. Paying someone else to operate my mailbox is a separate decision. KISS includes knowing which jobs I want to maintain."
+        },
+        {
+          "type": "p",
+          "text": "StartMail is where I landed. My requirements remain IMAP, SMTP, PGP, and enough separation to change my mind later. Deliver the mail, let me read it in my own client, and leave the rest of my life out of the sales pitch."
+        }
+      ],
+      "hero": {
+        "src": "/assets/email-2026-hero.webp",
+        "small_src": "/assets/email-2026-hero-720.webp",
+        "width": 1440,
+        "height": 810,
+        "alt": "An independent mailbox connects to several mail clients beside a closed software kiosk.",
+        "text": "Conceptual illustration: choosing a mail client independently of the provider.",
+        "social_src": "/assets/email-2026-hero.jpg"
+      }
+    }
+  ],
+  "plausible_script_url": "https://stats.foo.xyz/js/pa-J3iPtMFdQ3_drmLVJCkqA.js",
+  "signal": "bogon.77"
+}

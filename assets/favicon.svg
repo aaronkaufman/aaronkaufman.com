@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Aaron Kaufman</title>
+  <style>
+    .tile { fill: #eff1f5; stroke: #8839ef; }
+    .mark { stroke: #4c4f69; }
+    @media (prefers-color-scheme: dark) {
+      .tile { fill: #1e1e2e; stroke: #cba6f7; }
+      .mark { stroke: #cdd6f4; }
+    }
+  </style>
+  <rect class="tile" x="2" y="2" width="60" height="60" stroke-width="4"/>
+  <path class="mark" d="M11 45 20 18 29 45M15 36h10M37 19v26M53 19 37 32 54 45" fill="none" stroke-width="5" stroke-linecap="square" stroke-linejoin="bevel"/>
+</svg>
