@@ -903,6 +903,10 @@
       "blocks": [
         {
           "type": "p",
+          "text": "WARNING: HISTORY LESSON"
+        },
+        {
+          "type": "p",
           "text": "The history of SCO Unix begins with AT&T's Bell Labs, where Unix emerged in 1969. The Santa Cruz Operation later helped turn that research operating system into software businesses could run on Intel computers. A different company, eventually called The SCO Group, acquired the Unix business and became known for lawsuits involving Linux. Confusing those companies makes almost every subsequent event harder to understand."
         },
         {
