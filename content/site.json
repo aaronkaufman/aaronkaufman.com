@@ -695,6 +695,195 @@
         "text": "Conceptual illustration: choosing a mail client independently of the provider.",
         "social_src": "/assets/email-2026-hero.jpg"
       }
+    },
+    {
+      "slug": "emacs-vs-vim-rivalry-history",
+      "title": "Emacs vs Vim: How the Editor War Started",
+      "description": "When did the Emacs vs Vim rivalry start? Trace its roots in 1970s Emacs and vi, the 1980s editor wars, and Vim’s arrival in 1991.",
+      "date": "2026-09-15",
+      "category": "Unix / Computing history",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The Emacs vs Vim rivalry grew out of the older Emacs vs vi debate. Its roots reach back to the editors developed during the 1970s, and it was an established argument in Unix circles by the mid-1980s. Vim entered the story with its first public release on November 2, 1991. There is no well-established date for the first argument, and the two original editors appearing around the same period does not mean their users immediately declared war."
+        },
+        {
+          "type": "p",
+          "text": "The distinction matters when tracing the rivalry through history. People remember the dispute under the names they use today. But Bill Joy's vi and Bram Moolenaar's Vim are different programs, separated by years of development. The rivalry had already acquired its competing habits, technical complaints, and jokes before Vim gave one side a new standard bearer."
+        },
+        {
+          "type": "h2",
+          "text": "The 1970s origins of Emacs and vi"
+        },
+        {
+          "type": "p",
+          "text": "Emacs emerged at MIT from work on TECO, an earlier editor whose commands could be assembled into macros. Richard Stallman's account dates the first operational EMACS system to late 1976. Guy Steele and other MIT programmers contributed to the editing systems and ideas from which it developed. Users could extend the editor instead of accepting a fixed collection of commands.",
+          "source": {
+            "url": "https://www.gnu.org/software/emacs/emacs-paper.html",
+            "label": "Stallman’s history of the original Emacs."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The original Emacs ran on a PDP-10 under MIT's Incompatible Timesharing System. It was not the GNU Emacs people usually mean today. Keeping those implementations separate matters, because otherwise the story incorrectly places modern Emacs Lisp and the GNU project in the original editor's beginnings."
+        },
+        {
+          "type": "p",
+          "text": "At Berkeley, Bill Joy developed vi through work on ex, a Unix line editor. Its name came from the visual interface that let users work across a terminal screen. In a 1984 interview, Joy recalled designing the screen editor after Berkeley acquired ADM-3A terminals. He placed that work around the 1976 presidential election. The available hardware helped determine what he built.",
+          "source": {
+            "url": "https://computeradsfromthepast.substack.com/p/unix-review-interviews-sun-co-founder",
+            "label": "Bill Joy’s 1984 Unix Review interview, reproduced."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Those origins produced different expectations about editing. Emacs encouraged users to extend a working environment. Vi offered a compact command language for manipulating text. Neither description captures everything either editor could do, but the contrast gave their advocates something substantial to argue about."
+        },
+        {
+          "type": "h2",
+          "text": "How editing preferences became an editor war"
+        },
+        {
+          "type": "p",
+          "text": "The most visible disagreement concerned modes. In vi, ordinary letters can be editing commands. Pressing i enters insert mode, where typing adds text. Escape returns to command mode. A beginner who forgets the current mode can issue commands while trying to write a sentence. An experienced user can make substantial changes with very little typing.",
+          "source": {
+            "url": "https://vimhelp.org/intro.txt.html#vim-modes-intro",
+            "label": "Vim manual: editing modes."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Emacs normally inserts ordinary characters directly and assigns many commands to combinations involving Control or Meta. It also has modes, but its major and minor modes usually configure behavior for a task or file type. That is a different meaning from vi's distinction between entering text and issuing commands. Calling Emacs simply modeless hides this difference.",
+          "source": {
+            "url": "https://www.gnu.org/software/emacs/manual/html_node/emacs/Modes.html",
+            "label": "GNU Emacs manual: major and minor modes."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Consider deleting several words. A vi user learns to combine an operation with a movement and a count. An Emacs user learns commands that can be repeated, rebound, or extended. Both approaches reward practice. After enough repetition, changing editors means interrupting movements that previously required almost no conscious attention."
+        },
+        {
+          "type": "image",
+          "src": "/assets/emacs-vi-keyboard-modes.webp",
+          "small_src": "/assets/emacs-vi-keyboard-modes-720.webp",
+          "width": 1440,
+          "height": 810,
+          "alt": "Lavender and orange groups of keyboard keys connect to the same text on a terminal screen.",
+          "text": "Different keyboard habits can accomplish the same editing task. Conceptual AI-generated illustration."
+        },
+        {
+          "type": "p",
+          "text": "That helps explain the intensity, though it cannot establish the date of any particular quarrel."
+        },
+        {
+          "type": "p",
+          "text": "An editor sits between a programmer and nearly every line of work. Criticism of the tool can sound like criticism of the hours spent learning it. Add different machines, different workloads, and different local teaching habits, and personal preference starts looking like universal truth."
+        },
+        {
+          "type": "h2",
+          "text": "By the 1980s, the argument had become folklore"
+        },
+        {
+          "type": "p",
+          "text": "Evidence from the period is more useful than a tidy origin legend. The book Life with UNIX records a deliberately insulting title for a 1985 European UNIX User Group debate about vi. That gives us a dated example of public editor antagonism. It does not identify the first hostile conversation or prove that a single event launched the rivalry.",
+          "source": {
+            "url": "https://vtda.org/books/Computing/OperatingSystems/LifeWithUnux_LibesRessler.pdf",
+            "label": "Life with UNIX, Editors section (PDF)."
+          }
+        },
+        {
+          "type": "p",
+          "text": "GNU Emacs also appeared in 1985, bringing Stallman's newer implementation into the same Unix world where vi was already familiar. Discussions on networked forums helped users encounter opposing preferences beyond their own computer rooms. Arguments about memory use, keyboard commands, customization, and availability were easy to repeat because each reflected a problem somebody had personally experienced.",
+          "source": {
+            "url": "https://github.com/emacs-mirror/emacs/blob/master/etc/HISTORY",
+            "label": "GNU Emacs release history."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The religious language made the dispute memorable. Stallman's Saint IGNUcius routine turned devotion to Emacs into an explicit joke, complete with a halo. His explanation also says that using a free version of vi is no sin. That detail gets lost when the performance is treated as evidence of an absolute technical or moral prohibition.",
+          "source": {
+            "url": "https://stallman.org/saint.html",
+            "label": "Stallman’s explanation of Saint IGNUcius."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Joy himself was less doctrinaire than the rivalry suggests. In that interview, he praised Emacs for its programmability and said he had enjoyed using it. His frustration was maintaining his own extensions as the software changed. That is a recognizable complaint about upkeep, even from the author of vi. It makes the history more interesting than a contest between two irreconcilable camps.",
+          "source": {
+            "url": "https://computeradsfromthepast.substack.com/p/unix-review-interviews-sun-co-founder",
+            "label": "Joy on Emacs and maintaining extensions."
+          }
+        },
+        {
+          "type": "h2",
+          "text": "When Vim joined the rivalry in 1991"
+        },
+        {
+          "type": "p",
+          "text": "Bram Moolenaar wanted a usable vi-style editor on his Amiga. In his own history of Vim, he describes improving an existing clone because the available alternatives did not satisfy him. The first public release, Vim 1.14, appeared on Fred Fish disk 591 on November 2, 1991. A Unix port followed in 1992.",
+          "source": {
+            "url": "https://www.free-soft.org/FSM/english/issue01/vim.html",
+            "label": "Bram Moolenaar’s account of Vim’s history."
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/vim-amiga-1991.webp",
+          "small_src": "/assets/vim-amiga-1991-720.webp",
+          "width": 1440,
+          "height": 810,
+          "alt": "An Amiga-style keyboard computer, CRT display, and floppy disk evoke Vim’s first public release in 1991.",
+          "text": "Vim first reached the public on an Amiga software disk in 1991. Conceptual AI-generated illustration, not archival hardware documentation."
+        },
+        {
+          "type": "p",
+          "text": "Vim initially meant Vi IMitation and later became Vi IMproved. Features such as multiple levels of undo, multiple windows, and eventually syntax highlighting expanded what users could do while preserving familiar editing commands. It gave people who liked vi's interaction model reasons to keep using that model on newer systems.",
+          "source": {
+            "url": "https://www.free-soft.org/FSM/english/issue01/vim.html",
+            "label": "Moolenaar on Vim’s name and added features."
+          }
+        },
+        {
+          "type": "p",
+          "text": "This also weakened the old stereotype of a tiny editor facing an enormous programmable environment. Vim developed scripting, plugins, and a growing collection of features. Describing modern Vim as though it were the original vi confuses an inherited editing style with an unchanged implementation. The names in the argument evolved along with the software."
+        },
+        {
+          "type": "h2",
+          "text": "Why Emacs vs Vim still comes up"
+        },
+        {
+          "type": "p",
+          "text": "The remaining disagreement often concerns where someone wants to spend their working day. Some people want an extensible environment organized around Emacs. Others want Vim's modal commands wherever they edit. A preference can survive changes in hardware because the learned motions still feel comfortable, even after the original resource constraints have disappeared.",
+          "source": {
+            "url": "https://aaronkaufman.com/blog/when-did-tmux-overtake-screen/",
+            "label": "Related: when tmux overtook Screen."
+          }
+        },
+        {
+          "type": "p",
+          "text": "There is no requirement to choose every part of one tradition. Evil provides a vi layer inside Emacs and emulates Vim's main features. Its existence is a useful answer to the claim that modal editing and an extensible Emacs environment are fundamentally incompatible. Users can choose the editing commands and the surrounding environment separately.",
+          "source": {
+            "url": "https://evil.readthedocs.io/en/latest/overview.html",
+            "label": "Evil documentation: Vim editing inside Emacs."
+          }
+        },
+        {
+          "type": "p",
+          "text": "For anyone tracing the rivalry, the dates worth remembering are the 1970s origins, the visible disputes of the 1980s, and Vim's arrival in 1991. The evidence supports a rivalry that accumulated through use, argument, and imitation. It does not support a single founding confrontation. The interesting question is how two ways of editing became habits that programmers wanted everyone else to share."
+        }
+      ],
+      "hero": {
+        "src": "/assets/emacs-vim-hero.webp",
+        "small_src": "/assets/emacs-vim-hero-720.webp",
+        "width": 1440,
+        "height": 810,
+        "alt": "Two vintage terminals show branching functions and compact editing commands, representing Emacs and vi.",
+        "text": "Emacs and vi grew from different editing traditions. Conceptual AI-generated illustration.",
+        "social_src": "/assets/emacs-vim-hero.jpg"
+      },
+      "modified": "2026-11-02"
     }
   ],
   "plausible_script_url": "https://stats.foo.xyz/js/pa-J3iPtMFdQ3_drmLVJCkqA.js",
