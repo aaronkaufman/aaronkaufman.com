@@ -209,7 +209,7 @@ def build(output, site_url=None):
     for post in posts:
         path = '/blog/' + post['slug'] + '/'
         paths.append((path, post.get('modified', post['date'])))
-        body, toc = [], []
+        body, toc, footnotes = [], [], []
         for index, block in enumerate(post['blocks']):
             kind, text = block['type'], escape(block['text'])
             if kind == 'image':
@@ -227,16 +227,24 @@ def build(output, site_url=None):
                 source = block['source']
                 if urlsplit(source['url']).scheme != 'https':
                     raise ValueError('Sources must use HTTPS')
-                citation = f' <a class="source" href="{escape(source["url"])}">{escape(source["label"])}</a>'
+                if post.get('citation_style') == 'footnotes' and urlsplit(source['url']).netloc != 'aaronkaufman.com':
+                    number = len(footnotes) + 1
+                    citation = f'<sup id="fnref-{number}"><a href="#fn-{number}" role="doc-noteref" aria-label="Footnote {number}">[{number}]</a></sup>'
+                    footnotes.append(f'<li id="fn-{number}"><a href="{escape(source["url"])}">{escape(source["label"])}</a> <a href="#fnref-{number}" role="doc-backlink" aria-label="Return to reference {number}">↩</a></li>')
+                else:
+                    citation = f' <a class="source" href="{escape(source["url"])}">{escape(source["label"])}</a>'
             if kind == 'pre':
                 body.append(f'<pre tabindex="0"><code>{text}</code></pre>')
             else:
                 body.append(f'<{kind}{anchor}>{text}{citation}</{kind}>')
+        footnote_section = ('<section class="footnotes" role="doc-endnotes" aria-labelledby="footnotes-heading"><h2 id="footnotes-heading">Footnotes</h2><ol>' + ''.join(footnotes) + '</ol></section>') if footnotes else ''
+        if footnotes:
+            toc.append('<li><a href="#footnotes-heading">Footnotes</a></li>')
         minutes = max(1, math.ceil(article_word_count(post) / 220))
         related = ''.join(f'<li><a href="{local("/blog/" + other["slug"] + "/")}">{escape(other["title"])}</a></li>' for other in posts if other['slug'] != post['slug'])
         hero_image = article_image(post['hero'], hero=True) if post.get('hero') else ''
         related_section = f'<aside class="related"><h2>Related reading</h2><ul>{related}</ul></aside>' if related else ''
-        content = f'''<article class="article"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{local('/')}">Aaron Kaufman</a><span aria-hidden="true">/</span><a href="{local('/blog/')}">Writing</a><span aria-hidden="true">/</span><span aria-current="page">{escape(post['category'])}</span></nav><p class="eyebrow">{escape(post['category'])}</p><h1>{escape(post['title'])}</h1><p class="lede">{escape(post['description'])}</p><div class="byline"><a rel="author" href="{local('/')}">Aaron Kaufman</a><time datetime="{post['date']}">{date.fromisoformat(post['date']).strftime('%B %d, %Y')}</time><span>{minutes} min read</span></div>{hero_image}<nav class="toc" aria-label="On this page"><p>On this page</p><ol>{''.join(toc)}</ol></nav><div class="prose">{''.join(body)}</div><aside class="author-note" aria-label="About the author"><h2>About Aaron Kaufman</h2><p>Aaron Kaufman writes about systems engineering and information security, with notes on Linux and server hardening.</p><a rel="author" href="{local('/about/')}">About Aaron Kaufman</a></aside>{related_section}</article>'''
+        content = f'''<article class="article"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{local('/')}">Aaron Kaufman</a><span aria-hidden="true">/</span><a href="{local('/blog/')}">Writing</a><span aria-hidden="true">/</span><span aria-current="page">{escape(post['category'])}</span></nav><p class="eyebrow">{escape(post['category'])}</p><h1>{escape(post['title'])}</h1><p class="lede">{escape(post['description'])}</p><div class="byline"><a rel="author" href="{local('/')}">Aaron Kaufman</a><time datetime="{post['date']}">{date.fromisoformat(post['date']).strftime('%B %d, %Y')}</time><span>{minutes} min read</span></div>{hero_image}<nav class="toc" aria-label="On this page"><p>On this page</p><ol>{''.join(toc)}</ol></nav><div class="prose">{''.join(body)}</div>{footnote_section}<aside class="author-note" aria-label="About the author"><h2>About Aaron Kaufman</h2><p>Aaron Kaufman writes about systems engineering and information security, with notes on Linux and server hardening.</p><a rel="author" href="{local('/about/')}">About Aaron Kaufman</a></aside>{related_section}</article>'''
         write(path.lstrip('/') + 'index.html', page(post['title'] + ' | Aaron Kaufman', post['description'], path, content, post))
     write('404.html', page('Page not found | Aaron Kaufman', 'This page could not be found.', '/404.html', f'<section class="hero"><p class="eyebrow">404</p><h1>Page not found.</h1><a class="button" href="{local("/")}">Back home ↗</a></section>', missing=True))
     sitemap = ET.Element('urlset', xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')

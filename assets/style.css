@@ -115,3 +115,5 @@ pre code{display:block;min-width:max-content;color:inherit;background:none;borde
 .about-portrait img{display:block;width:100%;height:auto;aspect-ratio:1}
 @media(max-width:760px){.about-page{padding:36px 20px 44px}.about-portrait{width:40%;max-width:160px;margin:0 20px 16px 0}.about-copy h1{font-size:clamp(26px,7vw,40px);margin-bottom:20px}}
 @media(max-width:600px){.brand-name{display:none}}
+
+.footnotes{border-top:1px solid var(--border);margin-top:40px;padding-top:12px}.footnotes li{line-height:1.7;margin:10px 0;overflow-wrap:anywhere}.footnotes :target,.prose sup:target{outline:2px solid currentColor;outline-offset:4px}.prose sup{margin-left:.2em;font-size:.72em}

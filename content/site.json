@@ -884,6 +884,417 @@
         "social_src": "/assets/emacs-vim-hero.jpg"
       },
       "modified": "2026-11-02"
+    },
+    {
+      "slug": "sco-unix-att-history",
+      "title": "SCO Unix and AT&T: From Bell Labs to Court",
+      "description": "Trace SCO Unix from AT&T Bell Labs and Microsoft Xenix to OpenServer, Novell, Caldera, and the Linux lawsuits. A history of the companies and disputed rights.",
+      "date": "2026-11-02",
+      "category": "Unix / Computing history",
+      "hero": {
+        "src": "/assets/sco-att-unix-hero.webp",
+        "small_src": "/assets/sco-att-unix-hero-720.webp",
+        "width": 1440,
+        "height": 810,
+        "alt": "A minicomputer, business server, connected terminals, and contract binders represent stages in Unix history.",
+        "text": "From Bell Labs research to business servers and disputed contracts. Conceptual AI-generated illustration.",
+        "social_src": "/assets/sco-att-unix-hero.jpg"
+      },
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The history of SCO Unix begins with AT&T's Bell Labs, where Unix emerged in 1969. The Santa Cruz Operation later helped turn that research operating system into software businesses could run on Intel computers. A different company, eventually called The SCO Group, acquired the Unix business and became known for lawsuits involving Linux. Confusing those companies makes almost every subsequent event harder to understand."
+        },
+        {
+          "type": "p",
+          "text": "Three things traveled through this history on different terms: software, contractual rights, and the UNIX trademark. A company could sell a Unix product without owning every copyright behind it. A system could behave like Unix without containing AT&T code. A transfer of business assets could leave important rights with the seller. Those distinctions became expensive questions in court, but they also explain how Unix spread."
+        },
+        {
+          "type": "h2",
+          "text": "1969: Unix begins inside Bell Labs"
+        },
+        {
+          "type": "p",
+          "text": "Unix started after Bell Labs withdrew from Multics, an ambitious shared computing project. Ken Thompson wanted an environment in which he could continue programming. Working with colleagues including Dennis Ritchie, he developed a smaller system on a PDP-7. Ritchie's retrospective describes experimentation with a filesystem, processes, and tools, rather than a corporate plan to conquer the operating system market.",
+          "source": {
+            "url": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/hist.html",
+            "label": "Dennis Ritchie on the evolution of Unix."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The early machines were scarce resources. Sharing one computer among several people meant managing files, running programs, and keeping users from accidentally interfering with one another. Unix supplied those services through a relatively small collection of mechanisms. Its command interpreter, the shell, was a program users could replace, rather than an inseparable part of the kernel."
+        },
+        {
+          "type": "p",
+          "text": "Thompson and Ritchie's 1974 paper describes a system used for programming and document preparation, including patent applications. That last detail matters. Unix was already doing useful office work while its creators refined it. The paper explains how programs could communicate through pipes, allowing the output of one command to become another command's input.",
+          "source": {
+            "url": "https://people.eecs.berkeley.edu/~prabal/teaching/resources/eecs582/ritchie74unix.pdf",
+            "label": "Thompson and Ritchie's original Unix paper (PDF)."
+          }
+        },
+        {
+          "type": "p",
+          "text": "A pipe turns several small operations into a larger task."
+        },
+        {
+          "type": "p",
+          "text": "One command might select records, another sort them, and another count them. The user supplies the arrangement. This approach encouraged people to write reusable tools, since a program did not need to anticipate every possible report someone might request. Much of the familiar Unix working style grew around that possibility."
+        },
+        {
+          "type": "p",
+          "text": "The rewrite in C during 1973 made the system less dependent on one machine's assembly language. Portability still required substantial engineering. Ritchie's history of C describes later work moving Unix to other hardware, including the Interdata effort. The important change was that moving the operating system became a tractable project, rather than necessarily starting again from scratch.",
+          "source": {
+            "url": "https://www.nokia.com/bell-labs/about/dennis-m-ritchie/chist.pdf",
+            "label": "Ritchie on C and the work of portability (PDF)."
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/bell-labs-unix-origins.webp",
+          "small_src": "/assets/bell-labs-unix-origins-720.webp",
+          "width": 1440,
+          "height": 810,
+          "alt": "A vintage research computer room contains a minicomputer, terminal, printer, and open notebooks.",
+          "text": "Unix began as a research computing environment. Conceptual AI-generated illustration, not an archival photograph."
+        },
+        {
+          "type": "h2",
+          "text": "How AT&T Unix reached universities and vendors"
+        },
+        {
+          "type": "p",
+          "text": "AT&T licensed Unix outside Bell Labs. Universities could obtain source code under relatively inexpensive academic arrangements, while commercial licensing followed different terms. Access to the source allowed researchers to study how the system worked and change it. It did not place the software in the public domain or grant the freedoms associated with later open source licenses.",
+          "source": {
+            "url": "https://www.nokia.com/bell-labs/unix-history/sharing.html",
+            "label": "Bell Labs on Unix licensing and academic distribution."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Berkeley became an important center of Unix development. Its distributions added software and improvements, eventually including networking work supported by DARPA. For part of that history, Berkeley distributions still depended on licensed AT&T material. Describing every historical BSD release as freely redistributable would erase the licensing conditions under which many early users received it."
+        },
+        {
+          "type": "p",
+          "text": "Think of source access as permission to inspect the machinery under specified conditions. It answers one question about a program, but not every question about copying, selling, or redistributing it. That distinction is easy to miss when reading the history backward from today's public repositories. Researchers sharing improvements were working within a legal arrangement as well as a technical community."
+        },
+        {
+          "type": "p",
+          "text": "AT&T developed its commercial Unix line alongside these outside efforts. System V appeared in 1983 and became a reference point for vendors selling their own implementations. The family names matter because Unix never settled into one product with one release schedule. A customer might encounter research editions, Berkeley software, or a vendor's System V derivative, each carrying different additions and support arrangements.",
+          "source": {
+            "url": "https://www.nokia.com/bell-labs/unix-history/versions.html",
+            "label": "Bell Labs' timeline of Unix versions."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The resulting variety was useful and troublesome. Vendors could adapt an operating system to their machines and customers. Developers then had to determine which features an application could safely expect. A familiar shell prompt did not guarantee identical libraries, administration commands, or binary formats. Compatibility became something businesses purchased, tested, and negotiated, rather than something the name alone could promise."
+        },
+        {
+          "type": "h2",
+          "text": "Microsoft Xenix and the original Santa Cruz Operation"
+        },
+        {
+          "type": "p",
+          "text": "Microsoft announced Xenix in August 1980 as a portable Unix-based operating system. This surprises readers who know the company chiefly through DOS and Windows. At the time, licensing software for different computer manufacturers was an important part of its business. Xenix belonged to that period, when the future shape of the personal computer market remained unsettled.",
+          "source": {
+            "url": "https://learn.microsoft.com/en-us/shows/history/history-of-microsoft-1980",
+            "label": "Microsoft's history of its 1980 Xenix announcement."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The Santa Cruz Operation, founded in 1979 by Doug Michels and Larry Michels, worked on Unix ports and related development. Its own company history records packaged Xenix products for Intel machines in 1983, followed by versions for the 286 and 386. That history is a company retrospective, useful for its product sequence but best read without adopting its promotional superlatives.",
+          "source": {
+            "url": "https://www.landley.net/history/mirror/unix/scohistory.html",
+            "label": "Archived Santa Cruz Operation company history."
+          }
+        },
+        {
+          "type": "p",
+          "text": "SCO's achievement was commercial as much as technical."
+        },
+        {
+          "type": "p",
+          "text": "A working operating system needed installation procedures, drivers, documentation, application suppliers, and someone customers could call. The company built relationships with resellers and software developers. These businesses could deliver a complete installation instead of leaving the buyer to assemble a research system and solve every compatibility problem independently."
+        },
+        {
+          "type": "p",
+          "text": "Imagine a small wholesaler choosing a computer system. Several employees need inventory, invoices, and customer records at the same time. A central computer connected to terminals offers one place to store the data and run the application. The sale includes the accounting package, installation, training, and maintenance. The operating system matters because it makes that arrangement work reliably. A terminal in this arrangement was not necessarily a separate computer running its own copy of the business application. It could provide a keyboard and screen connected to the central machine. Multiple sessions shared that machine's processor, disks, and installed software. Adding a desk therefore did not automatically require another full application installation. The same arrangement also concentrated responsibility for backups and availability on the server."
+        },
+        {
+          "type": "p",
+          "text": "This hypothetical customer helps explain the market without pretending every installation was identical. The buyer might care little about the history of Bell Labs. The person responsible for payroll would care greatly if an upgrade broke the application. A reseller who understood the customer's printer, backup routine, and software could therefore matter more than a new feature in the kernel."
+        },
+        {
+          "type": "image",
+          "src": "/assets/sco-xenix-business-server.webp",
+          "small_src": "/assets/sco-xenix-business-server-720.webp",
+          "width": 1440,
+          "height": 810,
+          "alt": "An office server connects three terminal desks beside a printer and stocked shelves.",
+          "text": "A central server could support several employees using a business application. Conceptual AI-generated illustration."
+        },
+        {
+          "type": "h2",
+          "text": "SCO Unix and OpenServer become business products"
+        },
+        {
+          "type": "p",
+          "text": "SCO released its System V/386 Unix product in 1989. The OpenServer family followed in 1992. These names describe product development by the original Santa Cruz Operation, well before the later SCO Group's litigation campaign. The company also sold applications and networking components around its operating systems, making the complete business environment part of the purchase.",
+          "source": {
+            "url": "https://www.landley.net/history/mirror/unix/scohistory.html",
+            "label": "SCO's chronology of Unix and OpenServer products."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The shift from earlier Intel processors to the 386 widened what a PC-based Unix system could support. But a faster processor was only one part of a successful upgrade. Applications had to run, peripherals needed drivers, and administrators needed procedures they trusted. Selling a server meant supporting the combination, not simply demonstrating that the operating system could boot."
+        },
+        {
+          "type": "p",
+          "text": "Consider the cost of replacing a working order-entry system. Someone must move the records, verify calculations, reconnect printers, train employees, and arrange a fallback if the migration fails. Even when another operating system costs less, that project consumes time and carries risk. This is why an installed application can remain valuable after its underlying platform stops attracting much attention."
+        },
+        {
+          "type": "p",
+          "text": "There was another compatibility distinction: source compatibility versus binary compatibility. Developers might be able to rebuild a program for a new system while customers could not run their existing executable unchanged. If a supplier had disappeared, obtaining source code or a replacement build could become difficult. An apparently straightforward operating system replacement could then depend on rights, documentation, and people outside the customer's control. It also explains why accounts of computing history centered on enthusiasts can miss commercial Unix. New desktops and developer tools leave abundant public discussion. A server processing invoices in a back room may leave almost none. Lack of fashionable attention tells us little about how important the machine was to the business that depended on it."
+        },
+        {
+          "type": "h2",
+          "text": "AT&T, Novell, and the 1995 Unix transaction"
+        },
+        {
+          "type": "p",
+          "text": "AT&T placed its Unix business in Unix System Laboratories, or USL. Outside investors joined USL in 1991. Novell announced its planned acquisition in 1992 and completed it in 1993. The change put a major commercial Unix business inside a company associated with network software, at a time when vendors were competing to define the server market.",
+          "source": {
+            "url": "https://www.nokia.com/bell-labs/unix-history/moveson.html",
+            "label": "Bell Labs on USL and Novell's acquisition."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Standards organizations were another part of this story. X/Open worked to specify interfaces that applications could rely on across vendors. Stewardship of the UNIX trademark moved to X/Open during the 1993–1994 period, and The Open Group later continued the certification program. Trademark certification and ownership of historical source code were separate matters.",
+          "source": {
+            "url": "https://www.unix.org/unix_history.html",
+            "label": "The Open Group's Unix history and standards timeline."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The industry also divided over competing alliances. AT&T and Sun announced cooperation in 1987, and rival vendors formed the Open Software Foundation in response. These disputes helped give the period its Unix wars label. They concerned influence over the platform as well as technical choices. Customers and application developers had reasons to want common interfaces even when vendors preferred their own commercial strategies.",
+          "source": {
+            "url": "https://www.unix.org/unix_history.html",
+            "label": "The Open Group on competing Unix alliances."
+          }
+        },
+        {
+          "type": "p",
+          "text": "A trademark identifies a product under particular rules. Copyright concerns protected expression, including software code. A license grants permissions, which may be limited by contracts. These categories can overlap in a commercial deal, but they do not become interchangeable. Reading an announcement that a company bought a Unix business tells us less than reading the agreement that defined the assets."
+        },
+        {
+          "type": "p",
+          "text": "That mattered greatly after Novell and Santa Cruz signed their 1995 asset purchase agreement. The transaction transferred a Unix business, including UnixWare, but its treatment of copyrights and retained contractual powers became disputed. An amendment followed in 1996. Years later, courts had to interpret the agreement and amendment together, rather than treating the purchase as a simple transfer of everything called Unix.",
+          "source": {
+            "url": "https://www.ca10.uscourts.gov/sites/ca10/files/opinions/01018702687.pdf",
+            "label": "The appellate court's account of the asset purchase agreement (PDF)."
+          }
+        },
+        {
+          "type": "image",
+          "src": "/assets/unix-business-ownership.webp",
+          "small_src": "/assets/unix-business-ownership-720.webp",
+          "width": 1440,
+          "height": 810,
+          "alt": "Source listings and disks sit in an archive box beside a separate contracts folder and key.",
+          "text": "Source code, contractual rights, and trademark stewardship followed different paths. Conceptual AI-generated illustration."
+        },
+        {
+          "type": "p",
+          "text": "For a reader following the companies, the safest habit is to keep separate columns: who sells the product, who administers the contracts, who owns the disputed code, and who controls certification. The names in those columns need not match. Much of the later confusion came from collapsing them into one question about who owned Unix."
+        },
+        {
+          "type": "h2",
+          "text": "Why GNU and Linux changed the competition"
+        },
+        {
+          "type": "p",
+          "text": "Richard Stallman announced GNU in September 1983 as a project to build a complete Unix-compatible software system that users could freely share. His announcement listed an editor, compiler, shell, and other components alongside a kernel. This was a plan to implement a familiar computing environment under different terms, not an offer to redistribute AT&T's existing source code.",
+          "source": {
+            "url": "https://www.gnu.org/gnu/initial-announcement.html",
+            "label": "The original GNU project announcement."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Linux supplied another independently developed part of that environment. Linus Torvalds began the kernel in 1991, and other programmers contributed over the network. The kernel project's description emphasizes both its Unix-like behavior and its implementation from scratch. It also distinguishes the kernel from a distribution, which packages the additional software needed for a usable system.",
+          "source": {
+            "url": "https://www.kernel.org/linux.html",
+            "label": "The Linux kernel project's explanation of Linux."
+          }
+        },
+        {
+          "type": "p",
+          "text": "GNU's account describes how its tools and the Linux kernel could form a complete operating system. This offered a route to Unix-style computing outside the traditional proprietary vendor arrangement. It did not eliminate the need for integration, testing, or support. Those jobs could be supplied by a distribution vendor, a consultant, or an organization's own administrators.",
+          "source": {
+            "url": "https://www.gnu.org/gnu/gnu-history.html",
+            "label": "GNU's account of the combined system."
+          }
+        },
+        {
+          "type": "p",
+          "text": "For an established Unix supplier, that changed the comparison a customer could make. The customer could consider retaining familiar commands while buying support differently. An application still needed compatible interfaces, suitable libraries, and a tested migration path. Familiarity reduced some switching costs without removing them all. That tension helps explain why commercial Unix products and Linux distributions could compete for new installations while older systems continued operating."
+        },
+        {
+          "type": "h2",
+          "text": "Project Monterey and the Caldera purchase"
+        },
+        {
+          "type": "p",
+          "text": "In 1999, IBM described Project Monterey as a collaboration involving IBM, SCO, and Sequent, with Intel participating. The proposal combined technologies associated with AIX, UnixWare, and DYNIX/ptx across several processor families. It was an attempt to give commercial Unix a stronger shared direction while preserving the capabilities and customers of the participating vendors.",
+          "source": {
+            "url": "https://public.dhe.ibm.com/software/mktsupport/techdocs/projmont.pdf",
+            "label": "IBM's contemporary Project Monterey brochure (PDF)."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The brochure is evidence of what the companies proposed, not proof that every promised product appeared. That distinction matters when reading technology announcements. A plan can reveal competitive pressures and engineering ambitions while telling us little about what customers ultimately installed. Monterey also places SCO in an industry of partnerships, shared development, and contracts that later became subjects of dispute."
+        },
+        {
+          "type": "p",
+          "text": "Caldera completed its acquisition of SCO's server and professional services businesses in May 2001. The announcement included the OpenServer and UnixWare product lines and promoted a combination of Unix experience with Linux opportunities. The original Santa Cruz company continued around its Tarantella business. Caldera acquired the Unix operation, rather than turning every part of the old company into a new one.",
+          "source": {
+            "url": "https://lwn.net/2001/0510/a/caldera-sco.php3",
+            "label": "Caldera's May 2001 acquisition announcement, reproduced by LWN."
+          }
+        },
+        {
+          "type": "p",
+          "text": "This is the break in the family tree that abbreviated histories often skip."
+        },
+        {
+          "type": "p",
+          "text": "The familiar SCO name later belonged to the buyer. People could encounter the same product names and recognize the same initials while the corporate identity had changed. Following the operating systems alone would therefore produce a different timeline from following the legal entities."
+        },
+        {
+          "type": "p",
+          "text": "Caldera began using the SCO Group identity in 2002. Its SEC filings record shareholder approval of the formal corporate name change in May 2003. The distinction between branding and the legal name explains why histories give different dates for the change. Neither date means that the original Santa Cruz Operation was founded again.",
+          "source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1102542/000110465906004452/a06-2250_110k.htm",
+            "label": "SCO Group's SEC account of its corporate history."
+          }
+        },
+        {
+          "type": "h2",
+          "text": "The SCO Group, IBM, and the Linux allegations"
+        },
+        {
+          "type": "p",
+          "text": "In 2003, The SCO Group sued IBM. The dispute involved contractual obligations and alleged misuse of Unix-related material in connection with Linux. SCO also pursued licensing revenue through its SCOsource program. Its filings describe those claims from the company's perspective. They should be read as statements of its position, not independent findings that Linux infringed its rights.",
+          "source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1102542/000089102008000017/v37348e10vk.htm",
+            "label": "SCO Group's disclosures about litigation and SCOsource."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The allegations attracted attention because they challenged assumptions behind a rapidly spreading operating system. But technical resemblance alone cannot establish the copying of protected code. A filesystem, shell, or programming interface may follow familiar conventions without being the same implementation. To assess a particular accusation, one needs the identified material, its history, and the rights attached to it."
+        },
+        {
+          "type": "p",
+          "text": "It helps to separate four questions. What code or conduct was challenged? Which agreement or legal right supposedly covered it? Who possessed that right? Which issues did the court decide? Reporting that skips one of these steps can turn an accusation about specified material into an unsupported claim about an entire operating system."
+        },
+        {
+          "type": "p",
+          "text": "The IBM litigation and the Novell dispute were related but distinct proceedings."
+        },
+        {
+          "type": "p",
+          "text": "The former concerned IBM's conduct and contractual issues. The latter addressed ownership and powers flowing from the Novell transaction. A ruling in one could affect the assumptions behind the other without deciding every claim. Treating them as a single lawsuit obscures both the chronology and the legal reasoning."
+        },
+        {
+          "type": "image",
+          "src": "/assets/sco-unix-court-records.webp",
+          "small_src": "/assets/sco-unix-court-records-720.webp",
+          "width": 1440,
+          "height": 810,
+          "alt": "Legal folders, a technical manual, and a terminal appear in front of a courthouse silhouette.",
+          "text": "The lawsuits required courts to examine specific contracts and rights. Conceptual AI-generated illustration."
+        },
+        {
+          "type": "h2",
+          "text": "Bankruptcy and the Unix copyright verdict"
+        },
+        {
+          "type": "p",
+          "text": "SCO filed for Chapter 11 bankruptcy protection on September 14, 2007. Its contemporaneous SEC notice supplies the date directly. Bankruptcy added another set of proceedings involving the company's assets and obligations, alongside the litigation already underway. The continued existence of a product business and the financial condition of its owner were separate questions.",
+          "source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1102542/000095013407019988/v33808e8vk.htm",
+            "label": "SCO's September 2007 bankruptcy notice."
+          }
+        },
+        {
+          "type": "p",
+          "text": "In March 2010, a Utah jury found that Novell owned the Unix and UnixWare copyrights at issue. Novell announced the verdict immediately. The wording matters: this was a decision about the disputed historical copyrights, not a declaration that Novell owned every Unix-related program or every operating system with Unix-like behavior.",
+          "source": {
+            "url": "https://www.prnewswire.com/news-releases/utah-jury-confirms-novell-has-ownership-of-unix-copyrights-89561642.html",
+            "label": "Novell's announcement of the 2010 jury verdict."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The Tenth Circuit affirmed the judgment in 2011. Its opinion also addressed Novell's retained authority concerning certain license agreements. That outcome defeated the claim that the disputed copyrights had transferred through the transaction as SCO asserted. It did not, by itself, close every separate dispute associated with SCO, IBM, or later owners of the operating system products.",
+          "source": {
+            "url": "https://www.ca10.uscourts.gov/sites/ca10/files/opinions/01018702687.pdf",
+            "label": "The Tenth Circuit's August 2011 decision (PDF)."
+          }
+        },
+        {
+          "type": "p",
+          "text": "A useful history must resist rewriting earlier events as though this result had always been obvious. The parties disputed contract language, offered competing interpretations, and litigated through several stages. At the same time, uncertainty during a lawsuit is no reason to preserve an allegation as fact after the relevant judgment. The record changes what a responsible account can say."
+        },
+        {
+          "type": "h2",
+          "text": "What survived the SCO Unix disputes"
+        },
+        {
+          "type": "p",
+          "text": "UnXis announced completion of its purchase of the SCO Unix operating system assets in April 2011. The product business continued beyond the bankrupt company's most familiar public identity. This was another asset transaction, so it should not be mistaken for a court ruling or a fresh transfer of every right ever associated with Unix.",
+          "source": {
+            "url": "https://www.prnewswire.com/news-releases/unxis-completes-purchase-of-sco-unix-assets-119609744.html",
+            "label": "UnXis announces its 2011 purchase of operating system assets."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Xinuos, the business later associated with those products, continues to list OpenServer and UnixWare offerings. Their survival makes an important historical point. A platform can disappear from mainstream conversation while remaining relevant to customers with established applications. Product maintenance, migration decisions, and courtroom headlines operate on different schedules.",
+          "source": {
+            "url": "https://www.xinuos.com/company/",
+            "label": "Xinuos and its continuing operating system products."
+          }
+        },
+        {
+          "type": "p",
+          "text": "SCO's history therefore has more than one ending."
+        },
+        {
+          "type": "p",
+          "text": "The original company helped businesses buy Unix on comparatively accessible hardware. Caldera acquired that operation and adopted its name. The SCO Group then pursued claims whose central copyright premise failed in court. Customers, meanwhile, still had software to run and records to preserve."
+        },
+        {
+          "type": "p",
+          "text": "The wider Unix tradition also survived these corporate changes. Its tools, interfaces, and working habits spread well beyond any single vendor. The editor arguments discussed in my history of Emacs and Vim belong to that broader culture, where people carried learned habits from one system to another even when the machine and supplier changed.",
+          "source": {
+            "url": "https://aaronkaufman.com/blog/emacs-vs-vim-rivalry-history/",
+            "label": "Related: how the Emacs and Vim rivalry began."
+          }
+        },
+        {
+          "type": "p",
+          "text": "When someone says SCO bought Unix from AT&T, ask which company, which transaction, and which rights they mean. The intervening names matter: USL, Novell, Santa Cruz, and Caldera. Following those details reveals how a research system became a commercial product, how customers kept it useful, and why a short ownership slogan could never explain the resulting history."
+        }
+      ],
+      "citation_style": "footnotes"
     }
   ],
   "plausible_script_url": "https://stats.foo.xyz/js/pa-J3iPtMFdQ3_drmLVJCkqA.js",
