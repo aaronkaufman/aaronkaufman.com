@@ -20,6 +20,111 @@
   ],
   "posts": [
     {
+      "slug": "when-did-tmux-overtake-screen",
+      "title": "When Did tmux Overtake Screen?",
+      "description": "tmux gained ground in developer workflows during the early to mid-2010s. The history explains the shift, but does not establish a global usage crossover.",
+      "date": "2026-10-08",
+      "category": "UNIX / Terminal tools",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The early to mid-2010s is the best window for the shift toward tmux in developer workflows. That is a reading of the historical record, not a measured date when tmux passed GNU Screen in total users. The sources show a new project in 2007, operating system adoption in 2009, and an established culture of tmux tutorials and migration guides by 2012–2015."
+        },
+        {
+          "type": "p",
+          "text": "If you remember Screen being the obvious answer and then finding tmux in everyone’s dotfiles, there was no single release that marked the handoff. Different teams switched at different times. A developer configuring a new laptop and an administrator reconnecting to an old server had different reasons to change."
+        },
+        {
+          "type": "h2",
+          "text": "2007–2009: tmux becomes a credible alternative"
+        },
+        {
+          "type": "p",
+          "text": "Nicholas Marriott published the first version of tmux in late 2007. In a 2009 interview, he described having been a heavy Screen user who wanted a more extensible codebase and a different interface. One specific goal was sharing a window between terminals while keeping other windows separate. By then, he considered both programs usable enough that people could move between them without losing too many features.",
+          "source": {
+            "url": "https://undeadly.org/cgi?action=article&pid=196&sid=20090712190402",
+            "label": "Nicholas Marriott’s 2009 interview."
+          }
+        },
+        {
+          "type": "p",
+          "text": "OpenBSD 4.6 shipped on October 18, 2009, with tmux in its base system. The release notes identify it as the replacement for window(1). This was an important distribution milestone, but it was not an announcement that tmux had displaced Screen among Unix users.",
+          "source": {
+            "url": "https://www.openbsd.org/46.html",
+            "label": "OpenBSD 4.6 release notes."
+          }
+        },
+        {
+          "type": "h2",
+          "text": "2012–2015: evidence of a change in everyday use"
+        },
+        {
+          "type": "p",
+          "text": "By March 2012, thoughtbot was publishing instructions for getting tmux copy and paste working on Mac OS X. A guide about an integration problem tells us something different from a project announcement: people were already trying to fit tmux into their daily development environment.",
+          "source": {
+            "url": "https://thoughtbot.com/blog/how-to-copy-and-paste-with-tmux-on-mac-os-x",
+            "label": "thoughtbot’s March 2012 tmux guide."
+          }
+        },
+        {
+          "type": "p",
+          "text": "A February 2015 migration account gives a more direct glimpse of the shift. Tom Wey wrote that he had been the sole Screen user at New Bamboo, surrounded by enthusiastic tmux users. Access to that shared expertise was his biggest reason for switching. This is evidence from one workplace, not a representative survey, but it captures how a tool becomes the local default.",
+          "source": {
+            "url": "https://thoughtbot.com/blog/migrating-from-screen-to-tmux",
+            "label": "Tom Wey’s account of switching from Screen."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Those examples support describing the early to mid-2010s as a transition period in developer communities. They do not justify picking 2013, or any other year, as the moment a worldwide user count crossed. Establishing that would require comparable usage measurements over time."
+        },
+        {
+          "type": "h2",
+          "text": "Why tmux appealed to Screen users"
+        },
+        {
+          "type": "p",
+          "text": "Marriott’s 2011 design paper explains the appeal beyond the visible panes. tmux was built around a server managing windows, a consistent command interface, and shell scripting. Commands used from a key binding could also be used from the shell. The design made repeatable terminal workspaces a natural use case.",
+          "source": {
+            "url": "https://sources.debian.org/src/tmate/2.4.0-3/presentations/tmux_asiabsdcon11.pdf",
+            "label": "Marriott’s tmux design paper (PDF)."
+          }
+        },
+        {
+          "type": "p",
+          "text": "Consider a project with an editor, a test runner, and a log window. Being able to create and arrange that workspace with commands saves repeated setup. Once a teammate shares a useful configuration, the next person has less to learn from scratch. The migration account above suggests that this exchange of knowledge mattered alongside the software’s features."
+        },
+        {
+          "type": "p",
+          "text": "Screen’s capabilities also deserve a fair account. Vertical splitting was already available in its development version in February 2007. Its current manual documents horizontal and vertical splits, plus layouts that preserve arrangements across detach and reattach. Claims that Screen simply cannot split a terminal confuse particular versions or configurations with the program as a whole.",
+          "source": {
+            "url": "https://lists.gnu.org/archive/html/screen-users/2007-02/msg00000.html",
+            "label": "Screen’s 2007 development announcement."
+          }
+        },
+        {
+          "type": "p",
+          "text": "The distinction is in how the tools organize that work and how comfortable their interfaces feel to the person using them. Screen’s layout support provides another way to retain a working arrangement, so persistent layouts alone cannot explain every migration.",
+          "source": {
+            "url": "https://www.gnu.org/software/screen/manual/html_node/Layout.html",
+            "label": "GNU Screen’s layout documentation."
+          }
+        },
+        {
+          "type": "h2",
+          "text": "What would count as overtaking?"
+        },
+        {
+          "type": "p",
+          "text": "Installed packages, active users, search interest, and tutorial volume measure different things. A package can be installed without being used. Search traffic can come from troubleshooting. GitHub stars measure attention on one hosting platform. A comparison using the bare word “screen” also needs to separate the terminal multiplexer from unrelated searches."
+        },
+        {
+          "type": "p",
+          "text": "For a history of developer habits, I would place the shift in the early to mid-2010s and keep that qualification attached. For a claim about total usage, the evidence here does not establish a crossover. Screen users did not need to stop working for tmux to become the tool their colleagues reached for first."
+        }
+      ]
+    },
+    {
       "slug": "flock-alpr-cameras-los-angeles",
       "title": "Flock Cameras in Los Angeles: Privacy Risks",
       "description": "What Los Angeles’s license plate cameras collect, who can search the records, and what the LAPD audit found about privacy and oversight.",
