@@ -95,6 +95,15 @@
           "text": "Consider a project with an editor, a test runner, and a log window. Being able to create and arrange that workspace with commands saves repeated setup. Once a teammate shares a useful configuration, the next person has less to learn from scratch. The migration account above suggests that this exchange of knowledge mattered alongside the software’s features."
         },
         {
+          "type": "image",
+          "src": "/assets/tmux-screen-workspace.webp",
+          "small_src": "/assets/tmux-screen-workspace-720.webp",
+          "width": 1440,
+          "height": 810,
+          "alt": "Two terminal clients connect to a server holding a workspace with three panes.",
+          "text": "Conceptual illustration: a shared terminal workspace that persists between connections."
+        },
+        {
           "type": "p",
           "text": "Screen’s capabilities also deserve a fair account. Vertical splitting was already available in its development version in February 2007. Its current manual documents horizontal and vertical splits, plus layouts that preserve arrangements across detach and reattach. Claims that Screen simply cannot split a terminal confuse particular versions or configurations with the program as a whole.",
           "source": {
@@ -122,7 +131,17 @@
           "type": "p",
           "text": "For a history of developer habits, I would place the shift in the early to mid-2010s and keep that qualification attached. For a claim about total usage, the evidence here does not establish a crossover. Screen users did not need to stop working for tmux to become the tool their colleagues reached for first."
         }
-      ]
+      ],
+      "hero": {
+        "src": "/assets/tmux-screen-hero.webp",
+        "small_src": "/assets/tmux-screen-hero-720.webp",
+        "width": 1440,
+        "height": 810,
+        "alt": "Older and newer terminal workstations with split panes and overlapping terminal windows.",
+        "text": "Conceptual illustration: changing terminal habits across generations of workstations.",
+        "social_src": "/assets/tmux-screen-hero.jpg"
+      },
+      "modified": "2026-11-02"
     },
     {
       "slug": "flock-alpr-cameras-los-angeles",
